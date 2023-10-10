@@ -19,3 +19,17 @@ function contarVogais(palavra: string): number {
 const palavraExemplo: string = "Bootcamp";
 const quantidadeVogais: number = contarVogais(palavraExemplo);
 console.log(`A palavra "${palavraExemplo}" possui ${quantidadeVogais} vogais.`);
+
+// Exemplo de uso com uma palavra passada via input
+const form = document.querySelector("#formContador") as HTMLFormElement;
+const palavraInput = document.querySelector("#palavra") as HTMLInputElement;
+const resultadoTexto = document.querySelector(
+  "#resultado"
+) as HTMLParagraphElement;
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const quantidadeVogaisInput: number = contarVogais(palavraInput.value);
+
+  resultadoTexto.textContent = `A palavra "${palavraInput.value}" possui ${quantidadeVogaisInput} vogais.`;
+});
