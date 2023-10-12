@@ -3,8 +3,9 @@
 // b) Dar um exemplo de uso com uma palavra recebida via input no formulário.
 
 function contarVogais(palavra: string): number {
-  const vogais = "aeiouAEIOU";
-  let contador = 0;
+  palavra = palavra.toLowerCase();
+  const vogais: string = "aáàâãeéêiíoóôuúü";
+  let contador: number = 0;
 
   for (let i = 0; i < palavra.length; i++) {
     if (vogais.includes(palavra[i])) {
