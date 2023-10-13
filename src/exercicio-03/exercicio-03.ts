@@ -80,3 +80,34 @@ function editarPessoaImperativo(id: number, campo: string, novoValor: string) {
     return "Id inválido";
   }
 }
+
+// Consulta BIO Através do ID passado com Input
+const formConsultarBio = document.querySelector(
+  "#consultarBioForm"
+) as HTMLFormElement;
+const InputIdBio = document.querySelector("#idBio") as HTMLInputElement;
+const bioResult = document.querySelector("#bioResult") as HTMLParagraphElement;
+
+formConsultarBio.addEventListener("submit", (e) => {
+  e.preventDefault();
+  bioResult.textContent = `${pegaBioPorIdImperativo(
+    parseInt(InputIdBio.value)
+  )}`;
+});
+
+// Consulta NOME Através do ID passado com Input
+const formConsultarName = document.querySelector(
+  "#consultarNameForm"
+) as HTMLFormElement;
+const InputIdName = document.querySelector("#idName") as HTMLInputElement;
+const resultadoNome = document.querySelector(
+  "#resultadoNome"
+) as HTMLParagraphElement;
+
+formConsultarName.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  resultadoNome.textContent = `${pegaNamePorIdImperativo(
+    parseInt(InputIdName.value)
+  )}`;
+});
