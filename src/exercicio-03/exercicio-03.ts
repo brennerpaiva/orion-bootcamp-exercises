@@ -112,7 +112,7 @@ formConsultarName.addEventListener("submit", (e) => {
   )}`;
 });
 
-// Deleta a pessoa através do ID passado via Input
+// Deleta pessoa através do ID passado via Input
 const deletarPessoaForm = document.querySelector(
   "#deletarPessoaForm"
 ) as HTMLFormElement;
@@ -126,5 +126,30 @@ deletarPessoaForm.addEventListener("submit", (e) => {
 
   resultadoDeletar.textContent = `${JSON.stringify(
     deletaPessoaImperativo(parseInt(inputIdDeletar.value))
+  )}`;
+});
+
+// Edita Nome ou Bio a partir do ID e Campo passado via formulário
+const editarPessoaForm = document.querySelector(
+  "#editarPessoaForm"
+) as HTMLFormElement;
+const inputIdEditar = document.querySelector("#idEditar") as HTMLInputElement;
+const campoEditar = document.querySelector("#campoEditar") as HTMLInputElement;
+const selectCampoEditar = document.querySelector(
+  "#selectCampoEditar"
+) as HTMLSelectElement;
+const resultadoEditar = document.querySelector(
+  "#resultadoEditar"
+) as HTMLParagraphElement;
+
+editarPessoaForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(selectCampoEditar.value);
+  console.log(campoEditar.value);
+
+  resultadoEditar.textContent = `${editarPessoaImperativo(
+    parseInt(inputIdEditar.value),
+    selectCampoEditar.value,
+    campoEditar.value
   )}`;
 });
