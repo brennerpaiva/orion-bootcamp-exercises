@@ -95,7 +95,7 @@ formConsultarBio.addEventListener("submit", (e) => {
   )}`;
 });
 
-// Consulta NOME Através do ID passado com Input
+// Consulta NOME através do ID passado com Input
 const formConsultarName = document.querySelector(
   "#consultarNameForm"
 ) as HTMLFormElement;
@@ -109,5 +109,22 @@ formConsultarName.addEventListener("submit", (e) => {
 
   resultadoNome.textContent = `${pegaNamePorIdImperativo(
     parseInt(InputIdName.value)
+  )}`;
+});
+
+// Deleta a pessoa através do ID passado via Input
+const deletarPessoaForm = document.querySelector(
+  "#deletarPessoaForm"
+) as HTMLFormElement;
+const inputIdDeletar = document.querySelector("#idDeletar") as HTMLInputElement;
+const resultadoDeletar = document.querySelector(
+  "#resultadoDeletar"
+) as HTMLParagraphElement;
+
+deletarPessoaForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  resultadoDeletar.textContent = `${JSON.stringify(
+    deletaPessoaImperativo(parseInt(inputIdDeletar.value))
   )}`;
 });
