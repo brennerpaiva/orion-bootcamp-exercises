@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+     <!-- CONSULTAR BIO  -->
+    <form id="consultarBioForm">
+        <h2>Consultar Bio por ID</h2>
+        <input type="number" id="idBio" placeholder="Digite o ID da pessoa que deseja ver a bio" required>
+        <button type="submit" >Consultar</button>
+        <p id="bioResult"></p>
+    </form>
+
+    <!-- CONSULTAR NOME  -->
+    <form id="consultarNameForm">
+        <h2>Consultar Nome por ID</h2>
+        <input type="number" id="idName" placeholder="Digite o ID da pessoa que deseja ver o nome" required>
+        <button type="submit">Consultar</button>
+        <p id="resultadoNome"></p>
+    </form>
+
+    <!-- DELETAR PESSOA -->
+    <form id="deletarPessoaForm">
+        <h2>Deletar Pessoa por ID</h2>
+        <input type="number" id="idDeletar" placeholder="Digite o ID da pessoa que deseja deletar" required>
+        <button type="submit" >Deletar</button>
+        <p id="resultadoDeletar"></p>
+    </form>
+
+    <!-- EDITAR PESSOA -->
+    <form id="editarPessoaForm">
+        <h2>Editar Pessoa por ID</h2>
+        <input type="number" id="idEditar"  placeholder="Digite o ID da pessoa que deseja editar" required>
+        <select name="selectCampo" id="selectCampoEditar" required>
+            <option value="" disabled selected hidden>--Selecione qual campo deseja alterar--</option>
+            <option value="nome">Nome</option>
+            <option value="bio">Bio</option>
+        </select>
+        <input type="text" id="novoCampoEditar" placeholder="Digite o novo valor" required>
+        <button type="submit">Editar</button>
+        <p id="resultadoEditar"></p>
+    </form>
+    
+    <script defer src="../../dist/exercicio-03/exercicio-03.js"></script>
+</body>
+</html>
